@@ -1,0 +1,274 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Análisis</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="mostrarContenido">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+          Bienvenido
+        </ion-card-header>
+        <ion-card-content>
+          ¡Hola, {{ nombre }}! es un gusto que estés aquí. <br>
+          Quiero que sepas que esta aplicación está dedicada para conocer tus estados de ánimo, para 
+          así analizarlos, y darte unos tips que podrán ayudarte a sobrellevar tus emociones, siempre y cuando
+          estés dispuesto a ponerlos en práctica.
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <div *ngIf="mostrarBoton" class="listobutton"> 
+      <ion-button (click)="mostrarFormulario()">Estoy listo</ion-button>
+    </div>
+  </div>
+
+  <div *ngIf="mostrarFormularioContenido">
+    <ion-item style="padding-top: 0px;">
+      <ion-card>
+        <ion-card-header>
+          Cuéntame de ti<br>
+          ¿Cómo te sientes?
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="block" (click)="mostrarMensaje('feliz')" class="btn-feliz">Feliz</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('bueno')" class="bot1">Bien, pero podría estar mejor</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('algo')" class="bot2">La verdad, no muy bien</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('mal')">Mal realmente</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <br><br><br><br>
+  </div>
+
+  <!-- Mostrar mensaje feliz -->
+  <div *ngIf="mostrarMensajeFeliz">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+          Me alegro por ti {{ nombre }}
+        </ion-card-header>
+        <ion-card-content>
+          ¿Sabías que la felicidad tiene muchos beneficios a tu salud? Tanto como físico y mental... Me alegro mucho por ti. <br> 
+          Si quieres más información sobre las ventajas de la felicidad, haz clic en el botón!!
+          <br>
+          <ion-button (click)="irAUrl('https://www.cedesca.com/noticias/como-la-felicidad-nos-aporta-beneficios-para-la-salud/')">Más información</ion-button>
+          <br><br> 
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+
+  <!-- Mostrar mensaje bueno -->
+  <div *ngIf="mostrarMensajeBueno">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+          {{ nombre }} me alegra de que te encuentres bien.
+        </ion-card-header>
+        <ion-card-content>
+          {{ nombre }}  tengo entendido que, podrías estar mejor. ¿Acaso hay alguna otra emoción involucrada, dime, con cuál te sientes identificado. Para poder ayudarte.
+          <br><br>
+          <ion-button expand="block" (click)="mostrarMensaje('optimista')" class="btn-feliz">Crees que ha pesar de los problemas aún hay solución</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('intemocional')" class="btn-feliz">Era un problema del pasado, todo está bien</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+
+  <!-- Mostrar mensaje algo -->
+  <div *ngIf="mostrarMensajeAlgo">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+          Lo lamento mucho {{ nombre }}
+        </ion-card-header>
+        <ion-card-content>
+          {{ nombre }} quiero ayudarte con algunos tips. ¿Me puedes decir con cuál mensaje te sientes más identificado?
+          <br><br>
+          <ion-button expand="block" (click)="mostrarMensaje('mal1')" class="btn-feliz">Ha sido difícil</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('mal2')" class="btn-feliz">Intento ser fuerte</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+
+  <!-- Mostrar mensaje mal -->
+  <div *ngIf="mostrarMensajeMal">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+          Tranquilo, está bien sentirse mal de vez en cuando.
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button expand="block" (click)="mostrarMensaje('bad1')" class="btn-feliz">Ha sido difícil</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('bad2')" class="btn-feliz">Intento ser fuerte</ion-button>
+          <br>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+
+  <!-- Mostrar mensaje optimista -->
+  <div *ngIf="mostrarMensajeUNO">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+          Es una respuesta optimista y bien acertada.
+        </ion-card-header>
+        <ion-card-content>
+          Así es, aunque haya problemas, siempre existirá alguna solución...
+          <br><br><strong>
+          Como dice la cita de Helen Keller, de su libro Optimist: An Essay:
+          "Aunque el mundo está lleno de sufrimiento, también está lleno de la superación del mismo."
+          <br><br>
+          Te daré algunas recomendaciones, para que sigas disfrutando de tu bienestar:
+          <br><br>
+          *Agradece cada mañana, practica tu gratitud.
+          <br>
+          *Incorpora una rutina de ejercicio diario, te ayudará a estar más animado.
+          <br>
+          *Date un tiempo de descanso.
+          <br>
+          *Defínete metas.
+          <br>
+          *Busca una dieta equilibrada
+          <br>
+          *No olvides dormir las horas recomendadas por los doctores.
+          <br><br></strong>
+          Si sientes más problemas, te recomiendo contactar con un profesional de salud. Recuerda que nuestro servicio es sólo para ofrecerte compañía, tips y algunos reconocimientos de emociones, para autodescubrirte y ayudarte con tu salud mental.
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+
+  <div *ngIf="mostrarMensaje11">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+          Lo siento mucho. Comprendo que no te sientas muy bien {{ nombre }}. 
+          <br><br>
+          Quiero ayudarte con algunos consejos, si me lo permites, podrían mejorar tu estado de ánimo. Aquí hay algunas ideas que podrías probar:
+        </ion-card-header>
+        <ion-card-content>
+          <br><br><b>
+          *Te recomiendo que hables con alguien, no te guardes tus sentimientos
+          <br><br>
+          *Recuerda que puedes contar con tus seres queridos, amigos o conocidos. 
+          <br><br>
+          *También puedes contactarte con Salud Responde <a href="tel:6003607777">Llamar al 600 360 7777</a> si necesitas ayuda psicológica o simplemente, quieres hablar con alguien.
+          <br><br> 
+          Si sientes más problemas, te recomiendo contactar con un profesional de salud.</b>
+          <br><br><br><br>
+          Recuerda que nuestro servicio es sólo para ofrecerte compañía, tips y algunos reconocimientos de emociones, para autodescubrirte y ayudarte con tu salud mental.
+          <br><br><br><br>
+          <strong>¡Ánimo! No estas sola, ni estás solo... ¡Puedes superar tu adversidad!</strong>
+          <br><br>
+          <img src="assets/img/gato.png" alt="Descripción de la imagen" />
+          <br><br>"Mírate, eres más de lo que aparentas"
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+
+  <div *ngIf="mostrarMensajeDOS">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+          {{ nombre }} estas enfrentando tus problemas con buena convicción. Te felicito
+        </ion-card-header>
+        <ion-card-content>
+          "Me alegra saber que has superado ese problema y que ahora todo está bien. Es un gran paso hacia adelante.
+          <br>
+          <img src="assets/img/trofeo.jpg" alt="Descripción de la imagen" />
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+
+  <div *ngIf="mostrarMensaje22">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+          {{ nombre }} estas siendo una persona resiliente y fuerte. Debes estar orgullosa de ti misma {{ nombre}}
+          <br><br>
+        </ion-card-header>
+        <ion-card-content>
+          ¿Sabes qué significa la resiliencia?
+          <br><br><br><br>
+          La resiliencia es una habilidad que se puede desarrollar y fortalecer con el tiempo a través de la práctica y la experiencia.
+          <br><br>
+          La resiliencia es la capacidad de adaptarse y recuperarse frente a la adversidad, el trauma, las tragedias, las amenazas o el estrés significativo.
+          <br><br>
+          Las personas resilientes no solo enfrentan desafíos, sino que también salen fortalecidas de ellos.
+
+          Una persona que inspira resiliencia, podría ser J.K. Rowling... Conocida como la autora de Harry Potter.
+          <br><br>Haz click en la imagen, para conocer su biografía.
+          <br><br><br><br>
+          <a href="https://www.biografiasyvidas.com/reportaje/rowling/"> 
+            <img src="assets/img/jk.png" alt="Descripción de la imagen">
+          </a>
+          Como dijo alguna vez Nick Vujicic:
+          <br><br><br><strong>
+          “Si fracasas, ¿te levantarás? Porque la verdad es que el fracaso no te puede vencer si tú estás dispuesto a levantarte.”
+          <br><br></strong>
+          <img src="assets/img/nick.jpg" alt="Descripción de la imagen" />
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+
+  <div *ngIf="mostrarMensaje33">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+        </ion-card-header>
+        <ion-card-content>
+          
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+
+  <div *ngIf="mostrarMensajemal1">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+        </ion-card-header>
+        <ion-card-content>
+          
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+
+  <div *ngIf="mostrarMensajemal2">
+    <ion-item style="padding-top: 20px;">
+      <ion-card>
+        <ion-card-header>
+        </ion-card-header>
+        <ion-card-content>
+          
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </div>
+<br><br><br>
+  <div class="ojo">
+    <p>Enfermedades y transtornos mentales comunes</p>
+    <br>
+    <b>Haz click en la imagen para conocerlos</b>
+  </div>
+
+    <img src="assets/img/mental.jpg" alt="Descripción de la imagen" [routerLink]="['/transtornos']"/>
+  
+  <br><br><br><br><br><br><br><br>
+  <div class="ojo">
+    <p>¿Qué puedo hacer si padezco de algún transtorno o enfermedad mental?</p>
+    <br>
+    <b>Haz click en la imagen para conocerlos</b>
+  </div>
+
+    <img src="assets/img/help.jpg" alt="Descripción de la imagen" [routerLink]="['/ayuda']"/>
+</ion-content>
