@@ -7,21 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  nombre: string="";
-  
-  
-  
-  constructor (private router: Router) { }
-  
-  
-  ngOnInit() {
-  }
-    irASaludo() {
-      
-      this.router.navigate(['/analisis', { nombre: this.nombre }] );
-  }
+  nombre: string = "";
+
+  constructor(private router: Router) { }
+
+  ngOnInit() { }
+
+  irASaludo() {
+    this.router.navigate(['/analisis', { nombre: this.nombre }]);
   }
 
-export class ExpansionOverviewExample {
-  panelOpenState = false;
+  submitForm() {
+    console.log("Formulario enviado");
+  }
 }

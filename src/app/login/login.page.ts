@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormBuilder } from '@angular/forms';
+
 
 
 @Component({
@@ -24,4 +24,7 @@ contrasena: string = "";
     event.stopPropagation();
   }
 
+  submitForm() {
+    console.log("Formulario enviado");
+  }
 }

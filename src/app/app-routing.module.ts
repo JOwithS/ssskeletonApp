@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'ayuda',
     loadChildren: () => import('./ayuda/ayuda.module').then( m => m.AyudaPageModule)
   },
+  {
+    path: 'salud',
+    loadChildren: () => import('./salud/salud.module').then( m => m.SaludPageModule)
+  },
 
 
 ];

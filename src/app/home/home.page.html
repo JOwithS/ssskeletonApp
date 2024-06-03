@@ -15,15 +15,17 @@
   </ion-item>
   
 
-<div class="example-container">
-    <ion-input class="ion1" label="Nombre" label-placement="floating" fill="solid" placeholder="Ingrese" [(ngModel)]="nombre"></ion-input>
-    <br>
+  <form (ngSubmit)="submitForm()">
+    <div class="example-container">
+      <ion-input class="ion1" label="Nombre" label-placement="floating" fill="solid" placeholder="Ingrese" [(ngModel)]="nombre" name="nombre"></ion-input>
+      <br>
     </div>
-<div class="example-container">
-    <ion-input class="ion1" label="Apellido" label-placement="floating" fill="solid" placeholder="Ingrese"></ion-input>
-    <br>
+    <div class="example-container">
+      <ion-input class="ion1" label="Apellido" label-placement="floating" fill="solid" placeholder="Ingrese"></ion-input>
+      <br>
     </div>
-    <ion-button (click)="irASaludo()" class="botONE">Ingrese</ion-button>
+    <ion-button type="submit" class="botONE" [routerLink]="['/analisis']">Ingrese</ion-button>
+  </form>
 </ion-content>
   
 

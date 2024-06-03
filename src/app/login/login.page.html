@@ -23,22 +23,20 @@
         </ion-toolbar>
     </ion-item>
       <br><br><br>
-      <div class="example-container">
-        <ion-input class="ion1" label="Usuario" label-placement="floating" fill="solid" placeholder="Enter text" [(ngModel)]="usuario"></ion-input>
-        <br>
-      </div>
-      <div class="example-container">
-        <mat-form-field>
-          <mat-label>Contraseña</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-        </mat-form-field>
-    </div>
-    <section>
-      <div class="example-button-row">
-        <a mat-flat-button color="basic" [routerLink]="['/home']">Ingresar</a>
-      </div>
+      <form (ngSubmit)="submitForm()">
+        <div class="example-container">
+          <ion-input class="ion1" label="Usuario" label-placement="floating" fill="solid" placeholder="Ingrese su usuario" [(ngModel)]="usuario" name="usuario"></ion-input>
+          <br>
+        </div>
+        <div class="example-container">
+          <ion-input class="ion1" type="password" label="Contraseña" label-placement="floating" fill="solid" placeholder="Ingrese su contraseña" [(ngModel)]="contrasena" name="contrasena"></ion-input>
+          <br>
+        </div>
+        <section>
+          <div class="example-button-row">
+            <a mat-flat-button color="basic" [routerLink]="['/home']">Ingresar</a>
+          </div>
+        </section>
+      </form>
       
       

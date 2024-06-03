@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Análisis</ion-title>
+    <ion-title>Herramientas para el Bienestar</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,9 +13,10 @@
         </ion-card-header>
         <ion-card-content>
           ¡Hola, {{ nombre }}! es un gusto que estés aquí. <br>
-          Quiero que sepas que esta aplicación está dedicada para conocer tus estados de ánimo, para 
-          así analizarlos, y darte unos tips que podrán ayudarte a sobrellevar tus emociones, siempre y cuando
-          estés dispuesto a ponerlos en práctica.
+          Quiero que sepas que esta aplicación está dedicada para brindarte apoyo emocional. E informarte de la importancia de la salud mental.
+          <br>
+          Además podré darte algunos tips que podrán ayudarte a sobrellevar cuando te sientas en algún mal momento. Siempre y cuando estés dispuesto a ponerlos en práctica.
+        <br><br> ¿Estas listo ?
         </ion-card-content>
       </ion-card>
     </ion-item>
@@ -28,8 +29,8 @@
     <ion-item style="padding-top: 0px;">
       <ion-card>
         <ion-card-header>
-          Cuéntame de ti<br>
-          ¿Cómo te sientes?
+          Dime  {{ nombre }} <br><br>
+          ¿Con cuál opción te sientes identificado?
         </ion-card-header>
         <ion-card-content>
           <ion-button expand="block" (click)="mostrarMensaje('feliz')" class="btn-feliz">Feliz</ion-button>
@@ -50,8 +51,9 @@
           Me alegro por ti {{ nombre }}
         </ion-card-header>
         <ion-card-content>
-          ¿Sabías que la felicidad tiene muchos beneficios a tu salud? Tanto como físico y mental... Me alegro mucho por ti. <br> 
-          Si quieres más información sobre las ventajas de la felicidad, haz clic en el botón!!
+          ¿Sabías que la felicidad trae múltiples beneficios tanto para tu salud física como mental? ¡Me alegro mucho por ti! <br>
+        <br>
+          Si deseas obtener más información sobre las ventajas de la felicidad para tu salud, haz clic en el botón.
           <br>
           <ion-button (click)="irAUrl('https://www.cedesca.com/noticias/como-la-felicidad-nos-aporta-beneficios-para-la-salud/')">Más información</ion-button>
           <br><br> 
@@ -65,13 +67,14 @@
     <ion-item style="padding-top: 20px;">
       <ion-card>
         <ion-card-header>
-          {{ nombre }} me alegra de que te encuentres bien.
+          
         </ion-card-header>
         <ion-card-content>
-          {{ nombre }}  tengo entendido que, podrías estar mejor. ¿Acaso hay alguna otra emoción involucrada, dime, con cuál te sientes identificado. Para poder ayudarte.
+          {{ nombre }} me alegra de que te encuentres bien. Y tengo entendido que sientes que podrías  estar mejor.
+          <br><br> Dime, ¿Con cuál otra opción te sientes identificado? 
           <br><br>
-          <ion-button expand="block" (click)="mostrarMensaje('optimista')" class="btn-feliz">Crees que ha pesar de los problemas aún hay solución</ion-button>
-          <ion-button expand="block" (click)="mostrarMensaje('intemocional')" class="btn-feliz">Era un problema del pasado, todo está bien</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('optimista')" class="btn-pou">¿Crees que ha pesar de los problemas aún hay solución?</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('intemocional')" class="btn-pouter">Tuviste un problema, pero ya está resuelto</ion-button>
         </ion-card-content>
       </ion-card>
     </ion-item>
@@ -87,8 +90,8 @@
         <ion-card-content>
           {{ nombre }} quiero ayudarte con algunos tips. ¿Me puedes decir con cuál mensaje te sientes más identificado?
           <br><br>
-          <ion-button expand="block" (click)="mostrarMensaje('mal1')" class="btn-feliz">Ha sido difícil</ion-button>
-          <ion-button expand="block" (click)="mostrarMensaje('mal2')" class="btn-feliz">Intento ser fuerte</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('mal1')" class="btn-noo">Ha sido difícil</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('mal2')" class="btn-noop">Intento ser fuerte</ion-button>
         </ion-card-content>
       </ion-card>
     </ion-item>
@@ -102,42 +105,39 @@
           Tranquilo, está bien sentirse mal de vez en cuando.
         </ion-card-header>
         <ion-card-content>
-          <ion-button expand="block" (click)="mostrarMensaje('bad1')" class="btn-feliz">Ha sido difícil</ion-button>
-          <ion-button expand="block" (click)="mostrarMensaje('bad2')" class="btn-feliz">Intento ser fuerte</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('bad1')" class="btn-mmm">No creo que pueda enfrentar mis problemas</ion-button>
+          <ion-button expand="block" (click)="mostrarMensaje('bad2')" class="btn-pipipi">No puedo hacer mi vida normal</ion-button>
           <br>
         </ion-card-content>
       </ion-card>
     </ion-item>
   </div>
 
-  <!-- Mostrar mensaje optimista -->
   <div *ngIf="mostrarMensajeUNO">
     <ion-item style="padding-top: 20px;">
       <ion-card>
         <ion-card-header>
-          Es una respuesta optimista y bien acertada.
+          Una respuesta optimista y acertada.
         </ion-card-header>
         <ion-card-content>
-          Así es, aunque haya problemas, siempre existirá alguna solución...
+          Siempre hay una solución para cada problema. Como dice Helen Keller en "Optimist: An Essay": "Aunque el mundo está lleno de sufrimiento, también está lleno de la superación del mismo."
+          <br><br>
+          Aquí tienes algunas recomendaciones para tu bienestar:
           <br><br><strong>
-          Como dice la cita de Helen Keller, de su libro Optimist: An Essay:
-          "Aunque el mundo está lleno de sufrimiento, también está lleno de la superación del mismo."
+          * Agradece cada mañana y practica la gratitud.
+          <br>
+          * Incorpora una rutina de ejercicio diario para mejorar tu ánimo.
+          <br>
+          * Tómate un tiempo para descansar.
+          <br>
+          * Establece metas personales.
+          <br>
+          * Mantén una dieta equilibrada.
+          <br>
+          * Duerme las horas recomendadas por los médicos.
           <br><br>
-          Te daré algunas recomendaciones, para que sigas disfrutando de tu bienestar:
-          <br><br>
-          *Agradece cada mañana, practica tu gratitud.
-          <br>
-          *Incorpora una rutina de ejercicio diario, te ayudará a estar más animado.
-          <br>
-          *Date un tiempo de descanso.
-          <br>
-          *Defínete metas.
-          <br>
-          *Busca una dieta equilibrada
-          <br>
-          *No olvides dormir las horas recomendadas por los doctores.
-          <br><br></strong>
-          Si sientes más problemas, te recomiendo contactar con un profesional de salud. Recuerda que nuestro servicio es sólo para ofrecerte compañía, tips y algunos reconocimientos de emociones, para autodescubrirte y ayudarte con tu salud mental.
+          </strong>
+          Si necesitas más ayuda, contacta a un profesional de salud. Nuestro servicio ofrece  consejos y herramientas para ayudarte con tu salud mental.
         </ion-card-content>
       </ion-card>
     </ion-item>
@@ -147,23 +147,25 @@
     <ion-item style="padding-top: 20px;">
       <ion-card>
         <ion-card-header>
-          Lo siento mucho. Comprendo que no te sientas muy bien {{ nombre }}. 
+          Lo siento mucho, {{ nombre }}. Entiendo que no te sientas bien.
           <br><br>
-          Quiero ayudarte con algunos consejos, si me lo permites, podrían mejorar tu estado de ánimo. Aquí hay algunas ideas que podrías probar:
+          Quisiera ofrecerte algunos consejos que podrían mejorar tu estado de ánimo:
         </ion-card-header>
         <ion-card-content>
-          <br><br><b>
-          *Te recomiendo que hables con alguien, no te guardes tus sentimientos
           <br><br>
-          *Recuerda que puedes contar con tus seres queridos, amigos o conocidos. 
-          <br><br>
-          *También puedes contactarte con Salud Responde <a href="tel:6003607777">Llamar al 600 360 7777</a> si necesitas ayuda psicológica o simplemente, quieres hablar con alguien.
-          <br><br> 
-          Si sientes más problemas, te recomiendo contactar con un profesional de salud.</b>
+          <b>
+            * Habla con alguien; no guardes tus sentimientos.
+            <br><br>
+            * Cuenta con tus seres queridos, amigos o conocidos.
+            <br><br>
+            * Si necesitas ayuda psicológica o solo quieres hablar, puedes contactar a Salud Responde llamando al <a href="tel:6003607777">600 360 7777</a>.
+            <br><br>
+            * Si los problemas persisten, te recomiendo contactar a un profesional de salud.
+          </b>
           <br><br><br><br>
-          Recuerda que nuestro servicio es sólo para ofrecerte compañía, tips y algunos reconocimientos de emociones, para autodescubrirte y ayudarte con tu salud mental.
+          Recuerda que nuestro servicio está aquí para ofrecerte consejos y ayudarte a  mejorar tu salud mental.
           <br><br><br><br>
-          <strong>¡Ánimo! No estas sola, ni estás solo... ¡Puedes superar tu adversidad!</strong>
+          <strong>¡Ánimo! No estás solo/a... ¡Puedes superar tu adversidad!</strong>
           <br><br>
           <img src="assets/img/gato.png" alt="Descripción de la imagen" />
           <br><br>"Mírate, eres más de lo que aparentas"
@@ -191,21 +193,17 @@
     <ion-item style="padding-top: 20px;">
       <ion-card>
         <ion-card-header>
-          {{ nombre }} estas siendo una persona resiliente y fuerte. Debes estar orgullosa de ti misma {{ nombre}}
-          <br><br>
+          {{ nombre }}, eres una persona resiliente y fuerte. Debes estar orgullosa de ti misma.
         </ion-card-header>
         <ion-card-content>
-          ¿Sabes qué significa la resiliencia?
-          <br><br><br><br>
-          La resiliencia es una habilidad que se puede desarrollar y fortalecer con el tiempo a través de la práctica y la experiencia.
+          ¿Sabes qué es la resiliencia?
           <br><br>
-          La resiliencia es la capacidad de adaptarse y recuperarse frente a la adversidad, el trauma, las tragedias, las amenazas o el estrés significativo.
+          La resiliencia es la capacidad de adaptarse y recuperarse frente a la adversidad, el trauma, las tragedias, las amenazas o el estrés significativo. Es una habilidad que se puede desarrollar y fortalecer con el tiempo mediante la práctica y la experiencia.
           <br><br>
-          Las personas resilientes no solo enfrentan desafíos, sino que también salen fortalecidas de ellos.
-
-          Una persona que inspira resiliencia, podría ser J.K. Rowling... Conocida como la autora de Harry Potter.
-          <br><br>Haz click en la imagen, para conocer su biografía.
-          <br><br><br><br>
+          Las personas resilientes no solo enfrentan desafíos, sino que también salen fortalecidas de ellos. 
+          <br><br>
+          Un ejemplo inspirador de resiliencia es J.K. Rowling, la autora de Harry Potter. Haz clic en la imagen para conocer su biografía.
+          <br><br><br><br><br><br>
           <a href="https://www.biografiasyvidas.com/reportaje/rowling/"> 
             <img src="assets/img/jk.png" alt="Descripción de la imagen">
           </a>
@@ -235,9 +233,10 @@
     <ion-item style="padding-top: 20px;">
       <ion-card>
         <ion-card-header>
+            Es completamente válido sentirse abrumado cuando los problemas parecen insuperables
         </ion-card-header>
         <ion-card-content>
-          
+            Sentirse abrumado por problemas aparentemente insuperables es normal, pero es esencial recordar que no estás solo. Todos enfrentamos dificultades en algún momento. Es valiente hablar sobre tus preocupaciones y buscar apoyo de amigos, familiares o profesionales como terapeutas. Recuerda que nuestros pensamientos no siempre reflejan la realidad; con tiempo, apoyo y estrategias adecuadas, las cosas pueden mejorar.
         </ion-card-content>
       </ion-card>
     </ion-item>
@@ -249,8 +248,14 @@
         <ion-card-header>
         </ion-card-header>
         <ion-card-content>
-          
-        </ion-card-content>
+          Es normal sentirse abrumado cuando las dificultades se acumulan, pero recuerda que no estás solo. Hay formas de encontrar alivio y apoyo.
+          <br><br>
+          Aunque pueda ser difícil ver una salida cuando estamos en medio de tantos problemas, con el apoyo adecuado las cosas pueden mejorar. Considera hablar con un profesional como un terapeuta, que puede ofrecerte herramientas y estrategias para manejar estas situaciones.
+          <br><br>
+          No sientas la presión de resolver todo de una vez. Dar pequeños pasos y enfocarte en un problema a la vez puede hacer que las cosas sean más manejables.
+          <br><br>
+          Sé amable contigo mismo y reconoce que es normal tener momentos difíciles. Con el tiempo, paciencia y el apoyo adecuado, puedes encontrar formas de enfrentar estos problemas y vivir una vida más plena.
+      </ion-card-content>
       </ion-card>
     </ion-item>
   </div>
@@ -259,16 +264,27 @@
     <p>Enfermedades y transtornos mentales comunes</p>
     <br>
     <b>Haz click en la imagen para conocerlos</b>
+    <br><br><br><br>
   </div>
 
-    <img src="assets/img/mental.jpg" alt="Descripción de la imagen" [routerLink]="['/transtornos']"/>
-  
+    <ion-img src="assets/img/mental.jpg" alt="Descripción de la imagen" [routerLink]="['/transtornos']" class="animation"/>
+    
   <br><br><br><br><br><br><br><br>
   <div class="ojo">
     <p>¿Qué puedo hacer si padezco de algún transtorno o enfermedad mental?</p>
-    <br>
+    <br><br><br>
     <b>Haz click en la imagen para conocerlos</b>
+    <br><br><br><br>
   </div>
 
-    <img src="assets/img/help.jpg" alt="Descripción de la imagen" [routerLink]="['/ayuda']"/>
+    <ion-img src="assets/img/help.jpg" alt="Descripción de la imagen" [routerLink]="['/ayuda']"class="animation"/>
+    <br><br><br><br><br><br><br><br>
+    <div class="ojo">
+      <p>¿Qué es la salud mental?</p>
+      <br>
+      <b>Haz click en la imagen para conocerlo</b>
+      <br><br><br><br>
+    </div>
+    <ion-img src="assets/img/qes.jpg" alt="Descripción de la imagen" [routerLink]="['/salud']"class="animation"/>
+    <br><br><br><br><br><br><br><br>
 </ion-content>

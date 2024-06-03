@@ -26,7 +26,6 @@ export class AnalisisPage implements OnInit {
   
 
 
-
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
