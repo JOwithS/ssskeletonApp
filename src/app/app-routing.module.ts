@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'salud',
     loadChildren: () => import('./salud/salud.module').then( m => m.SaludPageModule)
   },
+  {
+    path: 'calendario',
+    loadChildren: () => import('./calendario/calendario.module').then( m => m.CalendarioPageModule)
+  },
 
 
 ];
