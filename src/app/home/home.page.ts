@@ -19,5 +19,6 @@ export class HomePage implements OnInit {
 
   submitForm() {
     console.log("Formulario enviado");
+    this.router.navigate(['/analisis', { nombre: this.nombre }]);
   }
 }

@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./analisis.page.scss'],
 })
 export class AnalisisPage implements OnInit {
-  nombre: string = "";
+  nombre: string = '';
   mostrarContenido: boolean = false;
   mostrarFormularioContenido: boolean = false;
   mostrarBoton: boolean = true;
